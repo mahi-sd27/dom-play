@@ -1,1 +1,92 @@
-<h1> Hello </h1>
+<html>
+    <head>
+        <style>
+         body {          
+               background-image: url(https://wallpapertag.com/wallpaper/full/7/8/b/350830-best-website-background-1920x1080.jpg);
+               font-style:normal;
+            }   
+        h1,h2{
+            text-align: center;
+            font-weight: 400;
+            font-style:italic;
+            
+            
+        }
+            
+        </style>
+    </head>
+    <body>
+        <h1> DOM PLAY</h1>
+        <!--<p><span onclick="myHighlight(this)">To BE NOT TO BE</span></p> -->
+       <h2> The blind Side Script </h2>
+        <p> A JavaScript Assignmet by Mahder Wehabe. <br>
+            <br>
+            In this JavaScript example, when you clik on one of the lines of the actor, it will highlight that actor's line in yellow color while un-highlights the other actor lines.   
+            
+        </p>
+        <div id="play">
+            <p><span data-actor="cotton"> Cotton: "They?" You only mentioned one son.</span></p> 
+            <p><span data-actor="Bigtony"> Bigtony: Steven, yessir, but I brought another boy along.</span></p>   
+            <p><span data-actor="cotton"> Cotton: Another boy?</span></p> 
+            <p><span data-actor="Bigtony"> Bigtony : Yeah, Big Mike. He stays on our couch sometimes. It's a bad deal. His mama's on the crack pipe and he ain't got nobody.<br> He just wanted to come along with us today.</span></p>
+            <p><span data-actor="cotton"> Cotton: Would... Big Mike be an applicant as well?</span></p> 
+            <p><span data-actor="Bigtony"> Bigtony: Yeah, sure, why not. Cotton sighs, considers what to do..</span></p> 
+            <p><span data-actor="miss"> MRS. BOSWELL:Class, this is Mike Oher and he's new here so I expect you all to make him feel welcome. (with a warm smile)Mike, take any empty seat.</span></p>
+            <p><span data-actor="michale"> MICHAEL:
+                Can I leave now?
+                She nods and watches him stand and walk away. She glances
+                down at the sheet, turns it over and sees...
+                A DRAWING on the back - a boat on an ocean. On the boat is a
+                single, stick figure person. It's sweet but looks like a
+                third grader drew it.</span></p>
+        </div>
+        <a href="https://imsdb.com/scripts/Blind-Side,-The.html" target="_blank">The full script can be found here </a>
+        <footer>
+            <small>&copy; 2020 - <span id="copyright">2021</span>, All Rights Reserved ~
+            <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
+            <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
+            </small>
+          </footer>
+          
+        <script> 
+            // we are using the CSS descendent selector to access the spans
+            const spans = document.querySelectorAll('div#play span');
+            console.log(spans);
+
+            console.log(spans);
+            for(const mySpan of spans){
+            mySpan.addEventListener("click",function(ev){
+               // alert(mySpan.dataset.actor);
+                highlightActor(mySpan.dataset.actor);
+
+              });
+            }
+            
+
+
+            function highlightActor(myActor){
+
+                for(const mySpan of spans){
+                    if(myActor == mySpan.dataset.actor){
+                        mySpan.style.backgroundColor = 'yellow';
+                    }else{
+                        mySpan.style.backgroundColor = 'white';
+                    }
+                }
+ 
+               
+
+            }
+
+            
+            let myCopyright = myDate.getFullYear();
+
+            //Load copyright info into a span on the page
+
+            document.getElementById('copyright').innerHTML= myCopyright;    
+           
+      
+
+        </script>
+    </body>
+</html>
